@@ -6,7 +6,7 @@ I searched everywhere for a working one, but i had to edit multiple versions tog
 <br>
 -Add a button between pin 3/A3 (#2 leg) and 5v
 <br>
--upload the code with arduino or something 
+-Upload the code with arduino or something 
 <br>
 -Connect your ledstrips data pin to pin 0 (#5 leg) with some protection resistor(330ohm)
 <br>
