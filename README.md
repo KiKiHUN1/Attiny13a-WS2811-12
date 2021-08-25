@@ -5,6 +5,9 @@ I searched everywhere for a working one, but i had to edit multiple versions tog
 **Usage:**
 <br>
 -Add a button between pin 3/A3 (#2 leg) and 5v
+<br>
 -upload the code with arduino or something 
+<br>
 -Connect your ledstrips data pin to pin 0 (#5 leg) with some protection resistor(330ohm)
+<br>
 ![alt tag](https://github.com/KiKiHUN1/Attiny13a-WS2811-12/blob/main/Atiny13a%20WS2811-12%20led/attiny13-pinout.png)
