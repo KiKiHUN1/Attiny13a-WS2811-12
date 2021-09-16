@@ -11,7 +11,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include "light_ws2812.h"
-
+#include <EEPROM.h>
 
 
 //change here//
@@ -22,6 +22,8 @@
 #if !defined(ws2812_pin)
 #define ws2812_pin  0   // Data out pin
 #endif
+
+#define EEPROMadress 0
 const int led_numb=4;         //number of leds
 const int max_brightness=40;  //max brigtness, must be higher than the min_brightness
 const int min_brightness=0;   //min. brightness
@@ -192,7 +194,7 @@ struct cRGB led[led_numb];
 int main(void)
 {
   pinMode(buttonPin, INPUT);
-
+  custmcolor = byte(EEPROM.read(EEPROMadress));
   ////////////////////////////////////
   #ifdef __AVR_ATtiny10__
   CCP=0xD8;    // configuration change protection, write signature
@@ -214,9 +216,7 @@ int main(void)
     {
       counter=1;
     }
-    buttonState = digitalRead(buttonPin);
-
-                                                    // check if the pushbutton is pressed, if yes, change color
+    buttonState = digitalRead(buttonPin);                              // check if the pushbutton is pressed, if yes, change color
     if (buttonState == HIGH) 
     {
         if(custmcolor==7)
@@ -226,6 +226,7 @@ int main(void)
         {
           custmcolor=custmcolor+1;
         }
+        EEPROM.write(EEPROMadress, int(custmcolor));
         delay(200);
       } 
     
