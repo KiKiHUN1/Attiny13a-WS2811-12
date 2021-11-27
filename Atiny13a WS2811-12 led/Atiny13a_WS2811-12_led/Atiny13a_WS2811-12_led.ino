@@ -195,6 +195,12 @@ int main(void)
 {
   pinMode(buttonPin, INPUT);
   custmcolor = byte(EEPROM.read(EEPROMadress));
+  if(custmcolor<0||custmcolor>7)
+  {
+    custmcolor=0;
+    EEPROM.write(EEPROMadress, int(custmcolor));
+   }
+  
   ////////////////////////////////////
   #ifdef __AVR_ATtiny10__
   CCP=0xD8;    // configuration change protection, write signature
