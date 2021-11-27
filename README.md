@@ -6,11 +6,13 @@ I searched everywhere for a working one, but i had to edit multiple versions tog
 
 **Usage:**
 <br>
--Add a button between pin 3/A3 (#2 leg) and 5v
+-Add a button between pin 3/A3 (#2 leg),GND with 10k resistor and 5v
 <br>
 -Upload the code with arduino or something 
 <br>
 -Connect your ledstrips data pin to pin 0 (#5 leg) with some protection resistor(330ohm)
+<br>
+(It is stable if you add a capacitor between 5V and GND)
 <br><br>
 _You can edit the pins in the first lines_
 <br><br>
